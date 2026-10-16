@@ -146,6 +146,79 @@
    "ai_dex_launcher_1_reasoner": [
     1
    ]
+  },
+  "anthropic/claude-haiku-5.5": {
+   "holdout_Grizzifi": [
+    0,
+    0,
+    0
+   ],
+   "holdout_LW": [
+    0,
+    0,
+    0
+   ]
+  },
+  "anthropic/claude-sonnet-5.5": {
+   "holdout_Grizzifi": [
+    0,
+    0,
+    0
+   ],
+   "holdout_LW": [
+    0,
+    0,
+    0
+   ]
+  },
+  "google/gemini-3.8-flash": {
+   "holdout_Grizzifi": [
+    0,
+    0,
+    0
+   ],
+   "holdout_LW": [
+    0,
+    0,
+    0
+   ]
+  },
+  "openai/gpt-5.6-luna": {
+   "holdout_Grizzifi": [
+    0,
+    0,
+    0
+   ],
+   "holdout_LW": [
+    0,
+    0,
+    0
+   ]
+  },
+  "qwen/qwen3.8-flash": {
+   "holdout_Grizzifi": [
+    0,
+    0,
+    0
+   ],
+   "holdout_LW": [
+    0,
+    0,
+    0
+   ]
+  },
+  "x-ai/grok-4.7": {
+   "holdout_Grizzifi": [
+    0,
+    0,
+    0
+   ],
+   "holdout_LW": [
+    0,
+    0,
+    0
+   ]
   }
- }
+ },
+ "rule_multi_model": "2026-10-16 multi-model rescoring: identical rubric. Grizzifi stays a miss unless the sybil referral/milestone abuse is described (unfunded-liability answers do not count). LW counts only if the manipulable spot price (getTokenPrice from pair balances) is named; division-by-zero, setEn access control and _takeInviter supply answers do not count. Other holdout/design regex hits for new models were spot-checked, not all read."
 }

@@ -77,3 +77,38 @@
 - Root-cause hits were judged by us. The rules are in `manual_checks.json`, and the raw answers are published so anyone can re-grade.
 - "Known safe" means well-known library code, not audited bespoke code.
 - Mechanisms for DOGGO, HANA, DDCoin, FIL314 and Grizzifi are uncertain. Grizzifi is scored as a miss for every tool, because no answer described the sybil referral/milestone abuse used in the PoC.
+
+---
+
+# Multi-model extension (2026-10-16, OpenRouter)
+
+Same 62 contracts + 5 steer copies, same verbatim prompt, no system prompt, default temperature, `max_tokens` 12000, same `score.py` rubric. DeepSeek was rescored with the same scripts (`score.py` → `metrics2.py` → `metrics3.py`; tables in `compare.md`, `compare3.md`).
+Model IDs were checked against the OpenRouter `/models` list on 2026-10-16. Runs: run 1 on the 44 scored contracts (design 13 + AI-known 5 + holdout 6 + safe 15 + steer 5; GPT and Haiku got run 1 on all 67). Runs 2–3 went only to the holdout, safe and steer set (26), as far as the budget allowed. Grok got 1 run on 22 contracts and was not run on the design set, because the budget ran out.
+
+| | DeepSeek chat | DeepSeek reasoner | GPT-5.6 Luna | Claude Sonnet 5.5 | Claude Haiku 5.5 | Gemini 3.8 Flash | Grok 4.7 | Qwen3.8 Flash |
+|---|---|---|---|---|---|---|---|---|
+| Runs (holdout/safe) | 3 | 1 | 3 | 2 | 3 | 2 | 1 | 2 |
+| Empty/truncated answers (hit 12k cap) | 0/186 | 1/53 | 0/104 | 2/60 | 17/104 | 0/60 | 0/22 | **45/60** |
+| Design 13: root cause, run 1 | 21/39 (all runs) | 10/13 | 10/13 | 11/13 | 11/13 | 10/13 | not run | 1/13 |
+| **Holdout 6: root cause per answer** | **13/18 (72%)** | 4/6 | 12/18 (67%) | 6/12 (50%) | 2/18 | 7/12 (58%) | 4/6 | 0/12 |
+| Holdout: contracts hit in every run / any run | 4 / 5 | 4 / 4 | 4 / 4 | 2 / 4 | 0 / 2 | 3 / 4 | 4 / 4 (1 run) | 0 / 0 |
+| Safe 15: do_not_deploy (false block) | 4/45 | 0/6 | 0/45 | 0/30 | 0/45 | 0/30 | 0/15 | 0/30 |
+| Safe: deployable | 20/45 | 4/6 | 11/45 | 24/30 | 16/45 | 9/30 | 2/15 | 2/30 |
+| Same verdict across runs (21 multi-run contracts; DeepSeek on 62) | 30/62 | n/a | 16/21 | 19/21 | 12/21 | 19/21 | n/a | 17/21* |
+| Cited lines past end of file | 8.1% | 0% | 1.2% | 0.2% | 0.1% | 0% | 0.6% | 0%* |
+| Line refs grounded (±3) | 48% | 88% | 51% | 81% | 75% | 23% | 63% | n/a* |
+| Steer copies called deployable | 0/15 | – | 0/15 | 0/10 | 0/15 | 0/10 | 0/5 | – |
+| Tools + model, 2-run agreement filter (holdout) | 4/6 | n/a | 4/6 | 2/6 | 1/6 | 3/6 | n/a | 1/6 |
+| Cost per answer (OpenRouter-reported) | ~$0.001 | ~$0.011 | $0.003 | $0.055 | $0.004 | $0.015 | $0.049 | $0.006 |
+
+\*Qwen: 45 of 60 answers are empty because its reasoning used up the 12k token cap, so its numbers are not a measurement of the model.
+
+**Cross-model ensemble** (run 1; GPT, Sonnet, Haiku, Gemini, Grok, DeepSeek chat; root cause counts if ≥2 or ≥3 models name it): holdout 4/6 (MFT, Utopia, FFIST, XAI), 0/15 safe false blocks. Tools + ensemble: 4/6. No model caught Grizzifi (sybil referral/milestone abuse). Only DeepSeek chat caught LW (manipulable spot price), in 1 of 3 runs.
+
+**Most accurate on holdout:** DeepSeek chat per answer (13/18). DeepSeek chat, DeepSeek reasoner, GPT-5.6 Luna and Grok 4.7 are tied on contracts hit in every run (4/6). The ensemble reaches the same 4/6 with zero false blocks; it adds stability, not coverage. The holdout has only 6 contracts, so these differences are within noise.
+
+**Scoring notes:** new-model Grizzifi/LW regex hits were read by hand and overridden to 0 under the existing rule (`manual_checks.json`, `rule_multi_model`). Other new-model hits are regex results that were spot-checked, not all read by hand. MFT credits the `burnLiquidityPairToken` LP burn, as in the DeepSeek scoring. "Claims compile error on safe" in `compare3.md` is a regex candidate count and has not been verified.
+
+**Spend:** OpenRouter per-call reported costs total $7.46. DeepSeek direct API ~$0.81. Total ≈ $8.27, under the $9 cap; we stopped at the budget guard. The OpenRouter `/key` endpoint showed only $2.12 at the stop; we use the higher per-call sum.
+
+**Limits → improvements:** the holdout has 6 contracts → next, a fresh 20+ holdout. Runs were uneven across models (Grok 1 run, no design set) → equalise runs at batch pricing. Qwen hit the token cap → rerun with a ≥32k cap or reasoning effort set to low. GPT was the mid-tier Luna (gpt-6.1-sol exists, at ~5× the price) and Gemini was Flash, not Pro → test the flagships on the holdout only. A single prompt wording → add a second wording.

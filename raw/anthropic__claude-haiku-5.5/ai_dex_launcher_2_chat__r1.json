@@ -1,0 +1,60 @@
+{
+ "model_requested": "anthropic/claude-haiku-5.5",
+ "contract": "ai_dex_launcher_2_chat",
+ "run": 1,
+ "utc": "2026-10-16T06:44:39.733343+00:00",
+ "response": {
+  "id": "gen-1792133956-Dp4kKWLMrGLIqDnQSnRY",
+  "object": "chat.completion",
+  "created": 1792133956,
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "length",
+    "native_finish_reason": "max_tokens",
+    "message": {
+     "role": "assistant",
+     "content": "## Verdict: `do_not_deploy`\n\nThe core pricing math is off by a factor of 1e18, so buys are effectively unusable at any realistic ETH amount. Several other issues also need fixing before launch. Line numbers refer to the snippet as pasted.\n\n## Critical\n\n**1. Bonding-curve cost is 1e18\u00d7 too large (lines 121\u2013124, `_curveCost`).**\n`BASE_PRICE * amount` and `SLOPE * inner / 1e18` treat `amount` as whole-token-wei, but the price is meant to be per whole token. The base term needs `/1e18`, and the slope term needs `/1e36`, not `/1e18`.\n- Buying one full token (`amount = 1e18`) at `sold = 0` costs about `1e30` wei, or roughly 1e12 ETH.\n- `_tokensOut` (lines 141\u2013150) is derived from the same wrong formula, so it is self-consistent but unusable. With the 0.001 ETH example, `disc = b\u00b2 + 2000` and `sq = b`, so `_tokensOut` returns 0 and `buy` reverts at line 182 with \"amount too small\". The first non-zero output needs about 1,000,000 ETH.\n- `sell` (lines 259\u2013261) and `quoteBuy`/`quoteSell` inherit the same scale error, so every quote is wrong.\n\n**Fix:** Redefine the math in one consistent unit (e.g., `cost = (BASE_PRICE * amount + SLOPE * (sold*amount + amount\u00b2/2) / 1e18) / 1e18`), then add property tests: `cost(a) + cost(b) == cost(a+b)` within rounding, buy-then-sell round-trip loss bounded, and a sanity check that 1 whole token at start costs about `BASE_PRICE` wei.\n\n## High\n\n**2. Fee transfers can block trades (lines 89\u201390, 218\u2013226, 223, 281, 287\u2013288).**\nPlatform and creator fees are pushed with `call` and `require(ok)`. If `feeRecipient` or a creator is a contract that reverts on receive, every buy and sell for that token reverts. A creator can therefore freeze holders' ability to sell.\n**Fix:** Use a pull-payment pattern (accrue `pendingFees[recipient]` and add `claim()`), or at least avoid making the sell path depend on the creator's receive function.\n\n**3. Tokens sent to the contract address are stuck and break supply accounting (lines 86, 300\u2013307).**\nThe contract credits its own address with the whole curve balance at line 86, but `buy`/`sell` never update `balanceOf[tokenId][address(this)]`. `transfer` and `transferFrom` do not reject `to == address(this)`, so users can burn tokens. Sum of balances no longer equals `totalSupply`.\n**Fix:** Remove the curve's `balanceOf` entry and track the curve only through `curveSupply`, or reject `to == address(this)`.\n\n## Medium\n\n**4. Launch fee overpayment is not refunded (lines 73, 89).**\n`require(msg.value >= launchFee())` accepts any excess, and line 89 forwards the full `msg.value` to `feeRecipient`. Users lose the excess.\n**Fix:** Forward `launchFee()` and refund `msg.value - launchFee()`, or require equ",
+     "refusal": null,
+     "reasoning": null,
+     "reasoning_details": [
+      {
+       "type": "reasoning.text",
+       "signature": "[opaque encrypted provider blob removed before publishing]",
+       "format": "anthropic-claude-v1",
+       "index": 0
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 6399,
+   "completion_tokens": 12000,
+   "total_tokens": 18399,
+   "cost": 0.0066399,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0066399,
+    "upstream_inference_prompt_cost": 0.0006399,
+    "upstream_inference_completions_cost": 0.006
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 10886,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

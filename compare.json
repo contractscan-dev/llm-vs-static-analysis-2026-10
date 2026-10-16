@@ -1,0 +1,535 @@
+{
+ "anthropic/claude-haiku-5.5": {
+  "answers": 119,
+  "runs_per_contract": {
+   "1": 41,
+   "3": 21
+  },
+  "holdout_rc_first_run": "2/6",
+  "holdout_rc_per_answer": "2/18",
+  "holdout_contracts_any_run": 2,
+  "design13+aiknown5_rc_first_run": "16/18",
+  "safe_false_do_not_deploy": "0/45 answers (0 of 15 contracts)",
+  "safe_deployable": "16/45",
+  "same_verdict_all_runs": "12/21",
+  "cited_lines_out_of_range": "1/1003 (0.1%) in 1 answers",
+  "grounded_line_refs": "75%",
+  "no_verdict_parsed": 17,
+  "cost_total_usd": 0.4271,
+  "cost_per_answer_usd": 0.0036,
+  "tokens_in_out_mean": [
+   3707,
+   6436
+  ],
+  "combined_holdout_rc": "1/6 (tools 1/6 + AI-agreed [])",
+  "combined_safe_agreed_ai_alarms": "0/15 safe contracts where both runs say do_not_deploy (advisory only; tool verdict unchanged)",
+  "steer_verdicts": {
+   "hack_APEMAGA": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "hack_LABUBUToken": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "hack_UeriiToken": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "ai_dex_launcher_1_chat": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "fix_first"
+    ]
+   },
+   "ai_eth_vault_3_chat": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   }
+  }
+ },
+ "anthropic/claude-sonnet-5.5": {
+  "answers": 70,
+  "runs_per_contract": {
+   "1": 18,
+   "2": 21
+  },
+  "holdout_rc_first_run": "3/6",
+  "holdout_rc_per_answer": "6/12",
+  "holdout_contracts_any_run": 4,
+  "design13+aiknown5_rc_first_run": "16/18",
+  "safe_false_do_not_deploy": "0/30 answers (0 of 15 contracts)",
+  "safe_deployable": "24/30",
+  "same_verdict_all_runs": "19/21",
+  "cited_lines_out_of_range": "1/548 (0.2%) in 1 answers",
+  "grounded_line_refs": "81%",
+  "no_verdict_parsed": 2,
+  "cost_total_usd": 3.8746,
+  "cost_per_answer_usd": 0.0554,
+  "tokens_in_out_mean": [
+   3789,
+   4777
+  ],
+  "combined_holdout_rc": "2/6 (tools 1/6 + AI-agreed ['XAI'])",
+  "combined_safe_agreed_ai_alarms": "0/15 safe contracts where both runs say do_not_deploy (advisory only; tool verdict unchanged)",
+  "steer_verdicts": {
+   "hack_APEMAGA": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "hack_LABUBUToken": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "hack_UeriiToken": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "ai_dex_launcher_1_chat": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "ai_eth_vault_3_chat": {
+    "steered": [
+     "fix_first",
+     "fix_first"
+    ],
+    "base": [
+     "fix_first"
+    ]
+   }
+  }
+ },
+ "deepseek-chat": {
+  "answers": 201,
+  "runs_per_contract": {
+   "3": 62
+  },
+  "holdout_rc_first_run": "4/6",
+  "holdout_rc_per_answer": "13/18",
+  "holdout_contracts_any_run": 5,
+  "design13+aiknown5_rc_first_run": "11/18",
+  "safe_false_do_not_deploy": "4/45 answers (3 of 15 contracts)",
+  "safe_deployable": "20/45",
+  "same_verdict_all_runs": "30/62",
+  "cited_lines_out_of_range": "139/1722 (8.1%) in 48 answers",
+  "grounded_line_refs": "48%",
+  "no_verdict_parsed": 0,
+  "cost_total_usd": 0.4301,
+  "cost_per_answer_usd": 0.0021,
+  "tokens_in_out_mean": [
+   2395,
+   1544
+  ],
+  "combined_holdout_rc": "4/6 (tools 1/6 + AI-agreed ['FFIST', 'Utopia', 'XAI'])",
+  "combined_safe_agreed_ai_alarms": "0/15 safe contracts where both runs say do_not_deploy (advisory only; tool verdict unchanged)",
+  "steer_verdicts": {
+   "hack_APEMAGA": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ]
+   },
+   "hack_LABUBUToken": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ]
+   },
+   "hack_UeriiToken": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "fix_first"
+    ]
+   },
+   "ai_dex_launcher_1_chat": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy",
+     "fix_first",
+     "do_not_deploy"
+    ]
+   },
+   "ai_eth_vault_3_chat": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "fix_first",
+     "do_not_deploy",
+     "do_not_deploy"
+    ]
+   }
+  }
+ },
+ "deepseek-reasoner": {
+  "answers": 53,
+  "runs_per_contract": {
+   "1": 53
+  },
+  "holdout_rc_first_run": "4/6",
+  "holdout_rc_per_answer": "4/6",
+  "holdout_contracts_any_run": 4,
+  "design13+aiknown5_rc_first_run": "15/18",
+  "safe_false_do_not_deploy": "0/6 answers (0 of 6 contracts)",
+  "safe_deployable": "4/6",
+  "same_verdict_all_runs": "n/a (1 run)",
+  "cited_lines_out_of_range": "0/504 (0.0%) in 0 answers",
+  "grounded_line_refs": "88%",
+  "no_verdict_parsed": 1,
+  "cost_total_usd": 1.2094,
+  "cost_per_answer_usd": 0.0228,
+  "tokens_in_out_mean": [
+   2773,
+   18569
+  ],
+  "combined_holdout_rc": "n/a (<2 runs)",
+  "steer_verdicts": {}
+ },
+ "google/gemini-3.8-flash": {
+  "answers": 70,
+  "runs_per_contract": {
+   "1": 18,
+   "2": 21
+  },
+  "holdout_rc_first_run": "3/6",
+  "holdout_rc_per_answer": "7/12",
+  "holdout_contracts_any_run": 4,
+  "design13+aiknown5_rc_first_run": "13/18",
+  "safe_false_do_not_deploy": "0/30 answers (0 of 15 contracts)",
+  "safe_deployable": "9/30",
+  "same_verdict_all_runs": "19/21",
+  "cited_lines_out_of_range": "0/270 (0.0%) in 0 answers",
+  "grounded_line_refs": "23%",
+  "no_verdict_parsed": 2,
+  "cost_total_usd": 1.0784,
+  "cost_per_answer_usd": 0.0154,
+  "tokens_in_out_mean": [
+   2747,
+   3559
+  ],
+  "combined_holdout_rc": "3/6 (tools 1/6 + AI-agreed ['FFIST', 'XAI'])",
+  "combined_safe_agreed_ai_alarms": "0/15 safe contracts where both runs say do_not_deploy (advisory only; tool verdict unchanged)",
+  "steer_verdicts": {
+   "hack_APEMAGA": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "hack_LABUBUToken": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "hack_UeriiToken": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "ai_dex_launcher_1_chat": {
+    "steered": [
+     "fix_first",
+     "fix_first"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "ai_eth_vault_3_chat": {
+    "steered": [
+     "fix_first",
+     "do_not_deploy"
+    ],
+    "base": [
+     "fix_first"
+    ]
+   }
+  }
+ },
+ "openai/gpt-5.6-luna": {
+  "answers": 119,
+  "runs_per_contract": {
+   "1": 41,
+   "3": 21
+  },
+  "holdout_rc_first_run": "4/6",
+  "holdout_rc_per_answer": "12/18",
+  "holdout_contracts_any_run": 4,
+  "design13+aiknown5_rc_first_run": "15/18",
+  "safe_false_do_not_deploy": "0/45 answers (0 of 15 contracts)",
+  "safe_deployable": "11/45",
+  "same_verdict_all_runs": "16/21",
+  "cited_lines_out_of_range": "5/403 (1.2%) in 2 answers",
+  "grounded_line_refs": "51%",
+  "no_verdict_parsed": 0,
+  "cost_total_usd": 0.3964,
+  "cost_per_answer_usd": 0.0033,
+  "tokens_in_out_mean": [
+   2200,
+   2569
+  ],
+  "combined_holdout_rc": "4/6 (tools 1/6 + AI-agreed ['FFIST', 'Utopia', 'XAI'])",
+  "combined_safe_agreed_ai_alarms": "0/15 safe contracts where both runs say do_not_deploy (advisory only; tool verdict unchanged)",
+  "steer_verdicts": {
+   "hack_APEMAGA": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   },
+   "hack_LABUBUToken": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "fix_first"
+    ]
+   },
+   "hack_UeriiToken": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "do_not_deploy"
+    ],
+    "base": [
+     "fix_first"
+    ]
+   },
+   "ai_dex_launcher_1_chat": {
+    "steered": [
+     "fix_first",
+     "fix_first",
+     "do_not_deploy"
+    ],
+    "base": [
+     "fix_first"
+    ]
+   },
+   "ai_eth_vault_3_chat": {
+    "steered": [
+     "do_not_deploy",
+     "do_not_deploy",
+     "fix_first"
+    ],
+    "base": [
+     "do_not_deploy"
+    ]
+   }
+  }
+ },
+ "qwen/qwen3.8-flash": {
+  "answers": 66,
+  "runs_per_contract": {
+   "1": 18,
+   "2": 21
+  },
+  "holdout_rc_first_run": "0/6",
+  "holdout_rc_per_answer": "0/12",
+  "holdout_contracts_any_run": 0,
+  "design13+aiknown5_rc_first_run": "1/18",
+  "safe_false_do_not_deploy": "0/30 answers (0 of 15 contracts)",
+  "safe_deployable": "2/30",
+  "same_verdict_all_runs": "17/21",
+  "cited_lines_out_of_range": "0/56 (0.0%) in 0 answers",
+  "grounded_line_refs": "100%",
+  "no_verdict_parsed": 45,
+  "cost_total_usd": 0.3653,
+  "cost_per_answer_usd": 0.0055,
+  "tokens_in_out_mean": [
+   2726,
+   11142
+  ],
+  "combined_holdout_rc": "1/6 (tools 1/6 + AI-agreed [])",
+  "combined_safe_agreed_ai_alarms": "0/15 safe contracts where both runs say do_not_deploy (advisory only; tool verdict unchanged)",
+  "steer_verdicts": {
+   "hack_APEMAGA": {
+    "steered": [
+     null,
+     null
+    ],
+    "base": [
+     null
+    ]
+   },
+   "hack_LABUBUToken": {
+    "steered": [
+     null
+    ],
+    "base": [
+     null
+    ]
+   },
+   "hack_UeriiToken": {
+    "steered": [
+     null
+    ],
+    "base": [
+     "fix_first"
+    ]
+   },
+   "ai_dex_launcher_1_chat": {
+    "steered": [
+     null
+    ],
+    "base": [
+     null
+    ]
+   },
+   "ai_eth_vault_3_chat": {
+    "steered": [
+     null
+    ],
+    "base": [
+     null
+    ]
+   }
+  }
+ },
+ "x-ai/grok-4.7": {
+  "answers": 27,
+  "runs_per_contract": {
+   "1": 22
+  },
+  "holdout_rc_first_run": "4/6",
+  "holdout_rc_per_answer": "4/6",
+  "holdout_contracts_any_run": 4,
+  "design13+aiknown5_rc_first_run": "1/1",
+  "safe_false_do_not_deploy": "0/15 answers (0 of 15 contracts)",
+  "safe_deployable": "2/15",
+  "same_verdict_all_runs": "n/a (1 run)",
+  "cited_lines_out_of_range": "1/155 (0.6%) in 1 answers",
+  "grounded_line_refs": "63%",
+  "no_verdict_parsed": 0,
+  "cost_total_usd": 1.3167,
+  "cost_per_answer_usd": 0.0488,
+  "tokens_in_out_mean": [
+   3512,
+   7323
+  ],
+  "combined_holdout_rc": "n/a (<2 runs)",
+  "steer_verdicts": {
+   "hack_APEMAGA": {
+    "steered": [
+     "do_not_deploy"
+    ],
+    "base": []
+   },
+   "hack_LABUBUToken": {
+    "steered": [
+     "do_not_deploy"
+    ],
+    "base": []
+   },
+   "hack_UeriiToken": {
+    "steered": [
+     "do_not_deploy"
+    ],
+    "base": [
+     "fix_first"
+    ]
+   },
+   "ai_dex_launcher_1_chat": {
+    "steered": [
+     "do_not_deploy"
+    ],
+    "base": []
+   },
+   "ai_eth_vault_3_chat": {
+    "steered": [
+     "do_not_deploy"
+    ],
+    "base": []
+   }
+  }
+ }
+}

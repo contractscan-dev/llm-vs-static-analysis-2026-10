@@ -1,0 +1,67 @@
+{
+ "model_requested": "x-ai/grok-4.7",
+ "contract": "safe_oz4_wrapper",
+ "run": 1,
+ "utc": "2026-10-16T07:09:33.139114+00:00",
+ "response": {
+  "id": "gen-1792134573-nAYY3Vz4ZmujSPImkGNS",
+  "object": "chat.completion",
+  "created": 1792134573,
+  "model": "x-ai/grok-4.7",
+  "provider": "xAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "**Verdict: fix_first**\n\nNot deployable as written. After the compile fix, only deploy against a non-rebasing, non-fee ERC-20 you control the choice of.\n\n1. **Line 4 \u2014 does not compile.** `IERC20` is not in scope. Imports are not transitive, and `ERC20Wrapper.sol` does not expose it. Add an explicit `IERC20` import or this source cannot be deployed.\n\n2. **Line 4 \u2014 zero underlying is accepted.** `ERC20Wrapper` only rejects `underlying == address(this)`. `u == address(0)` deploys a permanently bricked wrapper (deposits/withdrawals cannot succeed). Reject `address(0)` in the constructor.\n\n3. **Line 4 \u2014 1:1 wrap is insolvent for some ERC-20s.** Inherited `depositFor` mints `amount` after `safeTransferFrom`, not the actual balance increase. Fee-on-transfer, rebasing, or callback tokens desync backing from supply so later `withdrawTo` calls fail or earlier withdrawers drain the contract. Do not point `u` at those tokens unless you mint on measured balance delta.\n\n4. **Line 4 \u2014 misleading metadata.** Hardcoded `\"Wrapped\"` / `\"wTKN\"` does not identify the asset. That is a user-loss and phishing footgun for a token contract; derive name and symbol from the underlying (or set them explicitly per deployment).\n\n5. **Line 2 \u2014 floating compiler pragma.** `^0.8.9` can resolve to a compiler that cannot build current OpenZeppelin (v5 needs `^0.8.20`) or to an older 0.8.x with known codegen bugs. Pin the compiler and the OpenZeppelin version together.\n\nResidual (inherited, not introduced here): tokens sent directly to the wrapper, not via `depositFor`, are stuck. There is no recovery path.",
+     "refusal": null,
+     "reasoning": "Reviewing the Wrapped contract for deployability and safety issues.\n\nChecking OpenZeppelin's ERC20Wrapper implementation to identify potential issues.\n\nThe wrapper enforces a self-wrap guard in its constructor. It delegates decimals to the underlying token and exposes an underlying getter. The depositFor function is also being examined.\n\nThe depositFor and withdrawTo functions are now fully analyzed. Both enforce sender guards and use SafeERC20 for underlying token transfers. The constructor syntax is also being verified.\n\nThe constructor correctly calls both ERC20 and ERC20Wrapper. ERC20Wrapper does not call the ERC20 constructor itself, so the most derived contract handles initialization. The decimals override is already present and correct. The self-wrap guard is also properly enforced.\n\nChecking OpenZeppelin version compatibility. The ^0.8.9 pragma is safe because ERC20Wrapper constructor signatures have not changed in recent releases.\n\nThe contract is missing an explicit import for `IERC20`. The constructor uses this type directly, but Solidity does not make imports from imported files transitive. This will cause a compilation error.\n\nThe hardcoded name and symbol do not reflect the underlying token. This is a UX issue rather than a security flaw.\n\nThe wrapper assumes a 1:1 token ratio. Fee-on-transfer or rebasing underlying tokens would break accounting and could make the contract insolvent. This is a known compatibility limitation of ERC20Wrapper.\n\nOpenZeppelin 5 requires Solidity ^0.8.20, so the ^0.8.9 pragma will fail compilation if version 5 is installed.\n\nDirect transfers of the underlying token to the wrapper would be permanently stuck, since withdrawals burn wrapper tokens one-to-one. This is standard ERC20Wrapper behavior and not a new bug.\n\nThe missing IERC20 import is a hard compilation error, so the contract cannot deploy as-is. The verdict should be fix_first.\n\nThe external decimals() call to the underlying token could revert or return incorrect values if the underlying is malicious. ERC777 tokens might also introduce reentrancy risks through callbacks during deposit or withdrawal.\n\nwithdrawTo burns wrapper tokens before transferring underlying, which follows checks-effects-interactions and prevents reentrancy during withdrawal. depositFor transfers the underlying before minting wrapper tokens, so an ERC777 callback could reenter after the transfer but before the mint completes. The sender guard blocks the wrapper from depositing into itself.\n\nThe wrapper does not implement the ERC777 recipient interface. If the underlying token is ERC777, safeTransferFrom to the contract will revert because ERC777 requires recipients to implement tokensReceived. This is a compatibility issue rather than a security vulnerability.\n\nThe constructor does not validate that the underlying token address is not zero. Deploying with address(0) would create a broken wrapper. This should be fixed.\n\nThe wrapper pattern itself is not inherently unsafe. The fee-on-transfer risk is a deployment precondition rather than a flaw in the contract code. OpenZeppelin widely deploys this pattern, and standard practice is to use only non-rebasing, non-fee underlying tokens.\n\nThe hardcoded token name and symbol on line 4 are a medium safety issue. They create a phishing vector and misleading metadata for an arbitrary underlying asset, so the wrapper should derive its identity from the underlying token.\n\nSolidity 0.8.9 is an older compiler version with known optimizer bugs and ABI coder issues. The contract's thin wrapper logic makes it unlikely to trigger these, but pinning to a more recent compiler is safer.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "Reviewing the Wrapped contract for deployability and safety issues.\n\nChecking OpenZeppelin's ERC20Wrapper implementation to identify potential issues.\n\nThe wrapper enforces a self-wrap guard in its constructor. It delegates decimals to the underlying token and exposes an underlying getter. The depositFor function is also being examined.\n\nThe depositFor and withdrawTo functions are now fully analyzed. Both enforce sender guards and use SafeERC20 for underlying token transfers. The constructor syntax is also being verified.\n\nThe constructor correctly calls both ERC20 and ERC20Wrapper. ERC20Wrapper does not call the ERC20 constructor itself, so the most derived contract handles initialization. The decimals override is already present and correct. The self-wrap guard is also properly enforced.\n\nChecking OpenZeppelin version compatibility. The ^0.8.9 pragma is safe because ERC20Wrapper constructor signatures have not changed in recent releases.\n\nThe contract is missing an explicit import for `IERC20`. The constructor uses this type directly, but Solidity does not make imports from imported files transitive. This will cause a compilation error.\n\nThe hardcoded name and symbol do not reflect the underlying token. This is a UX issue rather than a security flaw.\n\nThe wrapper assumes a 1:1 token ratio. Fee-on-transfer or rebasing underlying tokens would break accounting and could make the contract insolvent. This is a known compatibility limitation of ERC20Wrapper.\n\nOpenZeppelin 5 requires Solidity ^0.8.20, so the ^0.8.9 pragma will fail compilation if version 5 is installed.\n\nDirect transfers of the underlying token to the wrapper would be permanently stuck, since withdrawals burn wrapper tokens one-to-one. This is standard ERC20Wrapper behavior and not a new bug.\n\nThe missing IERC20 import is a hard compilation error, so the contract cannot deploy as-is. The verdict should be fix_first.\n\nThe external decimals() call to the underlying token could revert or return incorrect values if the underlying is malicious. ERC777 tokens might also introduce reentrancy risks through callbacks during deposit or withdrawal.\n\nwithdrawTo burns wrapper tokens before transferring underlying, which follows checks-effects-interactions and prevents reentrancy during withdrawal. depositFor transfers the underlying before minting wrapper tokens, so an ERC777 callback could reenter after the transfer but before the mint completes. The sender guard blocks the wrapper from depositing into itself.\n\nThe wrapper does not implement the ERC777 recipient interface. If the underlying token is ERC777, safeTransferFrom to the contract will revert because ERC777 requires recipients to implement tokensReceived. This is a compatibility issue rather than a security vulnerability.\n\nThe constructor does not validate that the underlying token address is not zero. Deploying with address(0) would create a broken wrapper. This should be fixed.\n\nThe wrapper pattern itself is not inherently unsafe. The fee-on-transfer risk is a deployment precondition rather than a flaw in the contract code. OpenZeppelin widely deploys this pattern, and standard practice is to use only non-rebasing, non-fee underlying tokens.\n\nThe hardcoded token name and symbol on line 4 are a medium safety issue. They create a phishing vector and misleading metadata for an arbitrary underlying asset, so the wrapper should derive its identity from the underlying token.\n\nSolidity 0.8.9 is an older compiler version with known optimizer bugs and ABI coder issues. The contract's thin wrapper logic makes it unlikely to trigger these, but pinning to a more recent compiler is safer.",
+       "format": "xai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "[opaque encrypted provider blob removed before publishing]",
+       "format": "xai-responses-v1",
+       "id": "rs_03a14dbf-9cef-98e5-a4a5-30c76a251568",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 1344,
+   "completion_tokens": 5356,
+   "total_tokens": 6700,
+   "cost": 0.033096,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 1152,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.033096,
+    "upstream_inference_prompt_cost": 0.00096,
+    "upstream_inference_completions_cost": 0.032136
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 4952,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

@@ -28,3 +28,6 @@ See `summary.md` for setup, scoring rules and the key numbers.
 - Root-cause grading is our judgement. Disagree? Re-grade from `raw/`.
 - Third-party contract sources keep their original licenses (mostly MIT / AGPL-3.0 / unlicensed verified code) and are included for research reproducibility. Our scripts and data are MIT.
 - This is not an audit, and nothing here is a claim about currently deployed contracts beyond the public post-mortems.
+
+## Multi-model extension (2026-10-16)
+Same prompt and rubric across OpenRouter models (GPT-5.6 Luna, Claude Sonnet 5.5 / Haiku 5.5, Gemini 3.8 Flash, Grok 4.7, Qwen3.8 Flash), plus DeepSeek rescored. `run_or.py` runs the calls (raw/<provider>__<model>/), `score.py` → `metrics2.py` → `metrics3.py` builds `compare3.md`. See `summary.md` for results and caveats.
