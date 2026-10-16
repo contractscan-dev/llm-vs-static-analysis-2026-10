@@ -1,0 +1,264 @@
+{
+ "deepseek-chat": {
+  "design13": {
+   "answers": 39,
+   "rc_hits": 21,
+   "rate": 0.54,
+   "contracts_hit_every_run": 6,
+   "contracts_hit_any_run": 8,
+   "rc_line_within_5": "4/18"
+  },
+  "holdout6": {
+   "answers": 18,
+   "rc_hits": 13,
+   "rate": 0.72,
+   "contracts_hit_every_run": 4,
+   "contracts_hit_any_run": 5,
+   "rc_line_within_5": "0/3"
+  },
+  "ai_known5": {
+   "answers": 15,
+   "rc_hits": 13,
+   "rate": 0.87,
+   "contracts_hit_every_run": 4,
+   "contracts_hit_any_run": 5,
+   "rc_line_within_5": "0/0"
+  },
+  "safe": {
+   "answers": 45,
+   "verdicts": {
+    "deployable": 20,
+    "fix_first": 21,
+    "do_not_deploy": 4
+   }
+  },
+  "verdicts_all": {
+   "do_not_deploy": 83,
+   "fix_first": 80,
+   "deployable": 23
+  },
+  "lines_cited": 1722,
+  "lines_out_of_range": 139,
+  "answers_with_out_of_range_line": 48,
+  "grounded_line_refs": "674/1399 (48%)",
+  "avg_issues_with_line_refs": 6.8,
+  "verdict_same_all_3_runs": "30/62",
+  "rc_hit_same_all_3_runs": "20/24",
+  "steer": {
+   "hack_APEMAGA": {
+    "steer": [
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ]
+    ],
+    "base": [
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ]
+    ]
+   },
+   "hack_LABUBUToken": {
+    "steer": [
+     [
+      "do_not_deploy",
+      false
+     ],
+     [
+      "do_not_deploy",
+      false
+     ],
+     [
+      "do_not_deploy",
+      false
+     ]
+    ],
+    "base": [
+     [
+      "do_not_deploy",
+      false
+     ],
+     [
+      "do_not_deploy",
+      false
+     ],
+     [
+      "do_not_deploy",
+      false
+     ]
+    ]
+   },
+   "hack_UeriiToken": {
+    "steer": [
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ]
+    ],
+    "base": [
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "fix_first",
+      true
+     ]
+    ]
+   },
+   "ai_dex_launcher_1_chat": {
+    "steer": [
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ]
+    ],
+    "base": [
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "fix_first",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ]
+    ]
+   },
+   "ai_eth_vault_3_chat": {
+    "steer": [
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ]
+    ],
+    "base": [
+     [
+      "fix_first",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ],
+     [
+      "do_not_deploy",
+      true
+     ]
+    ]
+   }
+  }
+ },
+ "deepseek-reasoner": {
+  "design13": {
+   "answers": 13,
+   "rc_hits": 10,
+   "rate": 0.77,
+   "contracts_hit_every_run": 10,
+   "contracts_hit_any_run": 10,
+   "rc_line_within_5": "6/9"
+  },
+  "holdout6": {
+   "answers": 6,
+   "rc_hits": 4,
+   "rate": 0.67,
+   "contracts_hit_every_run": 4,
+   "contracts_hit_any_run": 4,
+   "rc_line_within_5": "1/1"
+  },
+  "ai_known5": {
+   "answers": 5,
+   "rc_hits": 5,
+   "rate": 1.0,
+   "contracts_hit_every_run": 5,
+   "contracts_hit_any_run": 5,
+   "rc_line_within_5": "0/0"
+  },
+  "safe": {
+   "answers": 6,
+   "verdicts": {
+    "fix_first": 2,
+    "deployable": 4
+   }
+  },
+  "verdicts_all": {
+   "do_not_deploy": 31,
+   "fix_first": 15,
+   "deployable": 6,
+   "null": 1
+  },
+  "lines_cited": 504,
+  "lines_out_of_range": 0,
+  "answers_with_out_of_range_line": 0,
+  "grounded_line_refs": "398/452 (88%)",
+  "avg_issues_with_line_refs": 6.4
+ },
+ "contractscan": {
+  "rc_hits": {
+   "design13": 11,
+   "holdout6": 1,
+   "ai_known5": 5
+  },
+  "safe15_verdicts": {
+   "deployable": 11,
+   "fix_first": 4
+  },
+  "design13_verdicts": {
+   "do_not_deploy": 8,
+   "fix_first": 5
+  },
+  "holdout_verdicts": {
+   "do_not_deploy": 3,
+   "fix_first": 2,
+   "deployable": 1
+  }
+ }
+}

@@ -1,0 +1,255 @@
+model,contract,base,run,verdict,n_issues,lines_cited,lines_out_of_range,ghost_identifiers,grounded,grounded_of,rc_hit,rc_line_ok,chars,rc_regex,rc_manual
+deepseek-chat,ai_dex_launcher_1_chat,ai_dex_launcher_1_chat,1,do_not_deploy,0,0,0,['nonReentrant'],0,0,True,,11510,True,True
+deepseek-chat,ai_dex_launcher_1_chat,ai_dex_launcher_1_chat,2,fix_first,23,36,9,[],10,24,True,,8167,True,True
+deepseek-chat,ai_dex_launcher_1_chat,ai_dex_launcher_1_chat,3,do_not_deploy,20,22,4,"['amountIn', 'do_not_deploy', 'nonReentrant', 'permit', 'reserveIn', 'skim', 'sqrt']",6,16,True,,9237,True,True
+deepseek-chat,ai_dex_launcher_1_reasoner,ai_dex_launcher_1_reasoner,1,fix_first,0,0,0,"['decreaseAllowance', 'increaseAllowance', 'minEth', 'minLiquidity', 'minToken', 'rescue', 'rescueERC20', 'skim']",0,0,False,,6274,False,True
+deepseek-chat,ai_dex_launcher_1_reasoner,ai_dex_launcher_1_reasoner,2,fix_first,11,37,1,"['_spendAllowance', '_sync', '_update', 'permit', 'reserveETH', 'reserveToken']",11,35,False,,9220,True,True
+deepseek-chat,ai_dex_launcher_1_reasoner,ai_dex_launcher_1_reasoner,3,fix_first,1,1,0,"['deadline', 'decreaseAllowance', 'increaseAllowance', 'minimumLiquidity', 'permit', 'skim']",1,1,True,,7837,True,True
+deepseek-chat,ai_dex_launcher_2_chat,ai_dex_launcher_2_chat,1,do_not_deploy,15,27,2,['nonReentrant'],11,25,False,,6658,False,
+deepseek-chat,ai_dex_launcher_2_chat,ai_dex_launcher_2_chat,2,do_not_deploy,11,13,0,[],3,10,False,,8121,False,
+deepseek-chat,ai_dex_launcher_2_chat,ai_dex_launcher_2_chat,3,do_not_deploy,6,12,0,"['_msgSender', 'nonReentrant']",1,8,False,,8606,False,
+deepseek-chat,ai_dex_launcher_3_chat,ai_dex_launcher_3_chat,1,fix_first,10,14,4,"['SafeERC20', 'netTokens']",2,10,False,,5413,False,
+deepseek-chat,ai_dex_launcher_3_chat,ai_dex_launcher_3_chat,2,fix_first,7,11,0,"['fallback', 'mulDiv']",4,11,False,,5455,False,
+deepseek-chat,ai_dex_launcher_3_chat,ai_dex_launcher_3_chat,3,do_not_deploy,16,29,1,"['Ownable2Step', 'ReentrancyGuard', 'SafeERC20', 'maxTokensIn', 'minEthOut', 'minTokensOut']",14,22,False,,6579,False,
+deepseek-chat,ai_erc20_tax_1_chat,ai_erc20_tax_1_chat,1,fix_first,9,14,0,"['amountIn', 'decreaseAllowance', 'increaseAllowance', 'renounceOwnership', 'sync']",8,10,False,,5861,False,
+deepseek-chat,ai_erc20_tax_1_chat,ai_erc20_tax_1_chat,2,fix_first,11,12,1,"['decreaseAllowance', 'immutable', 'increaseAllowance', 'permit', 'swap', 'sync']",3,9,False,,4624,False,
+deepseek-chat,ai_erc20_tax_1_chat,ai_erc20_tax_1_chat,3,fix_first,0,0,0,"['_spendAllowance', 'burn', 'decreaseAllowance', 'getAmountOut', 'increaseAllowance', 'mint', 'pair', 'pendingOwner', 'renounceOwnership', 'swapAndLiquify']",0,0,False,,6712,False,
+deepseek-chat,ai_erc20_tax_1_reasoner,ai_erc20_tax_1_reasoner,1,fix_first,7,9,0,"['_spendAllowance', 'claim', 'renounceOwnership', 'rescue', 'rescueTokens']",3,7,False,,5388,False,
+deepseek-chat,ai_erc20_tax_1_reasoner,ai_erc20_tax_1_reasoner,2,deployable,0,0,0,"['Ownable2Step', 'SafeERC20', 'immutable', 'renounceOwnership']",0,0,False,,5205,False,
+deepseek-chat,ai_erc20_tax_1_reasoner,ai_erc20_tax_1_reasoner,3,fix_first,8,10,2,['renounceOwnership'],0,6,False,,5437,False,
+deepseek-chat,ai_erc20_tax_2_chat,ai_erc20_tax_2_chat,1,fix_first,13,14,0,"['Ownable', 'Ownable2Step', 'SafeERC20', 'acceptOwnership', 'addLiquidity', 'addLiquidityETH', 'decreaseAllowance', 'do_not_deploy', 'excludedFromTax', 'immutable', 'increaseAllowance', 'isExcluded', 'isRouter', 'maxTxAmount', 'pendingOwner', 'permit', 'tradingEnabled']",3,13,False,,5427,False,
+deepseek-chat,ai_erc20_tax_2_chat,ai_erc20_tax_2_chat,2,fix_first,13,13,4,"['acceptOwnership', 'rescue', 'rescueERC20', 'sum', 'withdraw']",3,5,False,,5835,False,
+deepseek-chat,ai_erc20_tax_2_chat,ai_erc20_tax_2_chat,3,do_not_deploy,20,28,6,"['TaxPaid', 'burn', 'permit', 'renounceOwnership']",5,14,False,,7631,False,
+deepseek-chat,ai_erc20_tax_3_chat,ai_erc20_tax_3_chat,1,fix_first,16,26,4,"['Ownable2Step', 'fix_first', 'isExempt', 'renounceOwnership', 'sum']",9,22,False,,6648,False,
+deepseek-chat,ai_erc20_tax_3_chat,ai_erc20_tax_3_chat,2,fix_first,7,8,0,"['int_const', 'renounceOwnership', 'scale']",3,8,False,,4899,False,
+deepseek-chat,ai_erc20_tax_3_chat,ai_erc20_tax_3_chat,3,do_not_deploy,9,16,0,"['DOMAIN_SEPARATOR', 'acceptOwnership', 'nonReentrant', 'supportsInterface']",5,16,False,,5870,False,
+deepseek-chat,ai_eth_vault_1_chat,ai_eth_vault_1_chat,1,deployable,4,6,0,"['withdrawAll', 'withdrawAmount']",6,6,False,,2830,False,
+deepseek-chat,ai_eth_vault_1_chat,ai_eth_vault_1_chat,2,fix_first,10,19,1,['Ownable2Step'],7,14,False,,5427,False,
+deepseek-chat,ai_eth_vault_1_chat,ai_eth_vault_1_chat,3,fix_first,3,3,0,"['nonReentrant', 'withdrawAll']",1,2,False,,3134,False,
+deepseek-chat,ai_eth_vault_1_reasoner,ai_eth_vault_1_reasoner,1,do_not_deploy,8,8,3,"['acceptOwnership', 'dust']",2,4,False,,6315,False,
+deepseek-chat,ai_eth_vault_1_reasoner,ai_eth_vault_1_reasoner,2,deployable,5,5,3,['sum'],0,2,False,,2727,False,
+deepseek-chat,ai_eth_vault_1_reasoner,ai_eth_vault_1_reasoner,3,fix_first,8,9,1,"['acceptOwnership', 'do_not_deploy', 'pendingOwner', 'sum']",2,8,False,,5875,False,
+deepseek-chat,ai_eth_vault_2_chat,ai_eth_vault_2_chat,1,fix_first,9,15,2,"['fallback', 'nonReentrant', 'pull', 'receive']",2,13,False,,4880,False,
+deepseek-chat,ai_eth_vault_2_chat,ai_eth_vault_2_chat,2,fix_first,10,30,1,"['DISPUTE_TIMEOUT', 'receive', 'withdraw']",5,29,False,,6071,False,
+deepseek-chat,ai_eth_vault_2_chat,ai_eth_vault_2_chat,3,fix_first,9,9,1,"['ReentrancyGuard', 'cancel', 'freelancerOpenDispute', 'nonReentrant']",1,8,False,,5557,False,
+deepseek-chat,ai_eth_vault_3_chat,ai_eth_vault_3_chat,1,fix_first,9,10,0,"['Ownable2Step', 'ReentrancyGuard', 'withdrawAll']",6,10,True,,4823,True,True
+deepseek-chat,ai_eth_vault_3_chat,ai_eth_vault_3_chat,2,do_not_deploy,7,19,0,['nonReentrant'],16,19,True,,5549,True,True
+deepseek-chat,ai_eth_vault_3_chat,ai_eth_vault_3_chat,3,do_not_deploy,6,6,2,"['Ownable2Step', 'nonReentrant', 'start']",3,4,True,,5315,True,True
+deepseek-chat,ai_multisig_timelock_1_chat,ai_multisig_timelock_1_chat,1,fix_first,10,18,0,"['ReentrancyGuard', 'addOwner', 'changeRequirement', 'nonReentrant', 'removeOwner']",9,17,False,,7789,False,
+deepseek-chat,ai_multisig_timelock_1_chat,ai_multisig_timelock_1_chat,2,fix_first,9,13,0,['nonReentrant'],4,13,False,,5305,False,
+deepseek-chat,ai_multisig_timelock_1_chat,ai_multisig_timelock_1_chat,3,fix_first,9,11,0,"['ReentrancyGuard', 'addOwner', 'cancelTransaction', 'changeRequirement', 'nonReentrant', 'nonpayable', 'rejected', 'removeOwner']",4,10,False,,6446,False,
+deepseek-chat,ai_multisig_timelock_1_reasoner,ai_multisig_timelock_1_reasoner,1,fix_first,7,8,2,"['cancelTransaction', 'fallback', 'fix_first']",1,5,False,,7340,False,
+deepseek-chat,ai_multisig_timelock_1_reasoner,ai_multisig_timelock_1_reasoner,2,fix_first,8,11,1,"['cancelTransaction', 'constant']",2,7,False,,4749,False,
+deepseek-chat,ai_multisig_timelock_1_reasoner,ai_multisig_timelock_1_reasoner,3,fix_first,0,0,0,['ReentrancyGuard'],0,0,False,,3932,False,
+deepseek-chat,ai_multisig_timelock_2_chat,ai_multisig_timelock_2_chat,1,fix_first,9,13,0,"['AdminTransferCancelled', 'Received', 'nonReentrant']",4,13,False,,6261,False,
+deepseek-chat,ai_multisig_timelock_2_chat,ai_multisig_timelock_2_chat,2,do_not_deploy,11,15,3,"['AdminTransferCancelled', 'ReentrancyGuard', 'do_not_deploy', 'initialize', 'nonReentrant', 'renounceAdmin']",4,10,False,,9526,False,
+deepseek-chat,ai_multisig_timelock_2_chat,ai_multisig_timelock_2_chat,3,fix_first,8,10,5,"['AdminTransferCancelled', 'initialize']",2,5,False,,7061,False,
+deepseek-chat,ai_multisig_timelock_3_chat,ai_multisig_timelock_3_chat,1,fix_first,0,0,0,['nonReentrant'],0,0,False,,7006,False,
+deepseek-chat,ai_multisig_timelock_3_chat,ai_multisig_timelock_3_chat,2,fix_first,2,3,0,"['ReentrancyGuard', 'fallback', 'min', 'nonReentrant']",0,3,False,,10985,False,
+deepseek-chat,ai_multisig_timelock_3_chat,ai_multisig_timelock_3_chat,3,fix_first,16,23,0,"['cancel', 'joinTimestamp', 'nonReentrant']",4,23,False,,9614,False,
+deepseek-chat,ai_nft_allowlist_1_chat,ai_nft_allowlist_1_chat,1,fix_first,0,0,0,"['IERC721', 'IERC721Metadata', 'MAX_PER_TX', 'renounceOwnership', 'transferOwnership']",0,0,False,,7888,False,
+deepseek-chat,ai_nft_allowlist_1_chat,ai_nft_allowlist_1_chat,2,do_not_deploy,11,12,0,['_safeMint'],5,9,False,,6648,False,
+deepseek-chat,ai_nft_allowlist_1_chat,ai_nft_allowlist_1_chat,3,do_not_deploy,27,32,8,"['IERC721Metadata', 'MINTED_PER_WALLET', '_safeMint', 'do_not_deploy', 'renounceOwnership', 'safeMint']",9,23,False,,8150,False,
+deepseek-chat,ai_nft_allowlist_1_reasoner,ai_nft_allowlist_1_reasoner,1,fix_first,11,14,0,['fix_first'],6,14,False,,6602,False,
+deepseek-chat,ai_nft_allowlist_1_reasoner,ai_nft_allowlist_1_reasoner,2,fix_first,30,30,0,['fix_first'],9,26,False,,6998,False,
+deepseek-chat,ai_nft_allowlist_1_reasoner,ai_nft_allowlist_1_reasoner,3,do_not_deploy,0,0,0,[],0,0,False,,5580,False,
+deepseek-chat,ai_nft_allowlist_2_chat,ai_nft_allowlist_2_chat,1,fix_first,11,16,2,"['ERC721Enumerable', 'IERC721', 'Ownable', 'Ownable2Step', 'receive', 'setBaseURI', 'tokenByIndex', 'tokenOfOwnerByIndex']",5,13,False,,7776,False,
+deepseek-chat,ai_nft_allowlist_2_chat,ai_nft_allowlist_2_chat,2,do_not_deploy,1,8,3,"['IERC165', 'IERC721', 'IERC721Enumerable', 'IERC721Metadata', 'SafeMath', 'fallback', 'receive', 'setBaseURI']",3,5,False,,7488,False,
+deepseek-chat,ai_nft_allowlist_2_chat,ai_nft_allowlist_2_chat,3,fix_first,0,0,0,"['fix_first', 'renounceOwnership', 'staticcall', 'withdrawTo']",0,0,False,,5557,False,
+deepseek-chat,ai_nft_allowlist_3_chat,ai_nft_allowlist_3_chat,1,do_not_deploy,17,20,3,"['IERC721', '_exists', '_feeDenominator', '_safeMint', 'renounceOwnership', 'symbol']",1,17,False,,6930,False,
+deepseek-chat,ai_nft_allowlist_3_chat,ai_nft_allowlist_3_chat,2,fix_first,0,0,0,"['IERC721Metadata', 'IERC721Receiver', '_beforeTokenTransfer', '_safeMint', 'setRoyaltyBps', 'symbol']",0,0,False,,7405,False,
+deepseek-chat,ai_nft_allowlist_3_chat,ai_nft_allowlist_3_chat,3,do_not_deploy,12,26,1,"['IERC2981', 'IERC721Receiver', '_beforeTokenTransfer', 'amount', 'contractURI', 'fix_first', 'getDigest', 'getMintTicketHash', 'getTicketHash', 'signTypedData']",10,25,False,,11590,False,
+deepseek-chat,ai_staking_1_chat,ai_staking_1_chat,1,do_not_deploy,0,0,0,"['mint', 'safeTransferFrom']",0,0,True,,6217,True,True
+deepseek-chat,ai_staking_1_chat,ai_staking_1_chat,2,do_not_deploy,10,26,9,"['SafeERC20', 'bytes1', 'nonReentrant', 'notifyReward', 'rewardBudget']",10,17,True,,7632,True,True
+deepseek-chat,ai_staking_1_chat,ai_staking_1_chat,3,do_not_deploy,1,1,0,"['Ownable', 'nonReentrant']",1,1,True,,7965,True,True
+deepseek-chat,ai_staking_1_reasoner,ai_staking_1_reasoner,1,fix_first,12,29,1,"['newStored', 'paid', 'renounceOwnership']",17,27,True,,10354,True,True
+deepseek-chat,ai_staking_1_reasoner,ai_staking_1_reasoner,2,fix_first,12,16,1,"['deployable', 'fix_first']",7,12,True,,8232,True,True
+deepseek-chat,ai_staking_1_reasoner,ai_staking_1_reasoner,3,do_not_deploy,14,18,0,"['_claim', 'rewardPerToken', 'rewardRate']",6,14,True,,7253,True,True
+deepseek-chat,ai_staking_2_chat,ai_staking_2_chat,1,fix_first,0,0,0,"['ReentrancyGuard', 'SafeERC20', 'StakingRewards', 'min', 'rewardPoolOwed']",0,0,False,,9157,False,
+deepseek-chat,ai_staking_2_chat,ai_staking_2_chat,2,fix_first,1,3,0,['pause'],3,3,False,,6759,False,
+deepseek-chat,ai_staking_2_chat,ai_staking_2_chat,3,fix_first,9,11,0,"['SafeERC20', 'nonReentrant']",7,11,False,,7598,False,
+deepseek-chat,ai_staking_3_chat,ai_staking_3_chat,1,fix_first,0,0,0,"['Ownable', 'Ownable2Step', 'remainingRewards', 'sum', 'transferOwnership']",0,0,False,,6645,False,
+deepseek-chat,ai_staking_3_chat,ai_staking_3_chat,2,do_not_deploy,11,15,1,['nonReentrant'],12,14,False,,7983,False,
+deepseek-chat,ai_staking_3_chat,ai_staking_3_chat,3,do_not_deploy,9,17,1,['nonReentrant'],12,16,False,,7189,False,
+deepseek-chat,hack_AIZPTToken,hack_AIZPTToken,1,do_not_deploy,10,11,0,['nonReentrant'],10,11,False,,5834,False,True
+deepseek-chat,hack_AIZPTToken,hack_AIZPTToken,2,do_not_deploy,10,12,0,['do_not_deploy'],7,12,False,,8017,False,True
+deepseek-chat,hack_AIZPTToken,hack_AIZPTToken,3,do_not_deploy,16,19,0,"['Burn', 'burn']",15,18,True,True,7173,True,True
+deepseek-chat,hack_APEMAGA,hack_APEMAGA,1,do_not_deploy,8,11,5,[],4,4,True,False,4419,True,
+deepseek-chat,hack_APEMAGA,hack_APEMAGA,2,do_not_deploy,12,12,4,['victim'],5,8,True,True,4829,True,
+deepseek-chat,hack_APEMAGA,hack_APEMAGA,3,do_not_deploy,10,11,0,['transferOwnership'],4,11,True,False,6409,True,
+deepseek-chat,hack_Bitpaidio,hack_Bitpaidio,1,do_not_deploy,3,3,0,"['safeTransferFrom', 'setToken']",2,2,False,,6946,True,True
+deepseek-chat,hack_Bitpaidio,hack_Bitpaidio,2,do_not_deploy,13,16,0,"['Reinvest', 'SafeERC20', 'Staked', 'Withdrawn', 'emergencyWithdrawToken', 'immutable', 'safeTransferFrom', 'withdrawToken']",3,10,False,,5650,True,True
+deepseek-chat,hack_Bitpaidio,hack_Bitpaidio,3,fix_first,10,10,0,"['Reinvest', 'SafeERC20', 'constant', 'immutable', 'nonReentrant']",3,10,False,,4940,True,True
+deepseek-chat,hack_DDCoin,hack_DDCoin,1,do_not_deploy,0,0,0,['SafeERC20'],0,0,True,,7087,True,
+deepseek-chat,hack_DDCoin,hack_DDCoin,2,do_not_deploy,2,2,2,['setPerUpPrice'],0,0,True,,7331,True,
+deepseek-chat,hack_DDCoin,hack_DDCoin,3,do_not_deploy,2,10,0,"['nonReentrant', 'setX']",5,10,True,,8300,True,
+deepseek-chat,hack_DOGGO,hack_DOGGO,1,fix_first,9,12,0,[],4,9,False,,8080,False,
+deepseek-chat,hack_DOGGO,hack_DOGGO,2,fix_first,0,0,0,['fix_first'],0,0,True,,6660,True,
+deepseek-chat,hack_DOGGO,hack_DOGGO,3,do_not_deploy,0,0,0,[],0,0,True,,8049,True,
+deepseek-chat,hack_FIL314,hack_FIL314,1,do_not_deploy,24,30,0,"['_burn', 'allowance', 'approve', 'nonReentrant', 'sum', 'transferFrom']",9,28,True,,7788,True,
+deepseek-chat,hack_FIL314,hack_FIL314,2,do_not_deploy,3,4,0,"['allowance', 'approve', 'minAmountOut', 'transferFrom']",4,4,True,,8191,True,
+deepseek-chat,hack_FIL314,hack_FIL314,3,do_not_deploy,15,20,0,"['allowance', 'approve', 'transferFrom']",10,20,True,,6924,True,
+deepseek-chat,hack_FireToken,hack_FireToken,1,do_not_deploy,16,24,0,"['getReserves', 'swap']",11,24,True,True,9848,True,
+deepseek-chat,hack_FireToken,hack_FireToken,2,do_not_deploy,9,14,2,"['initialBuyTax', 'initialSellTax', 'renounce']",5,11,True,True,4563,True,
+deepseek-chat,hack_FireToken,hack_FireToken,3,do_not_deploy,19,29,0,"['DOMAIN_SEPARATOR', 'swap', 'transferOwnership']",11,28,True,False,6142,True,
+deepseek-chat,hack_H2O,hack_H2O,1,do_not_deploy,0,0,0,[],0,0,True,False,5932,True,
+deepseek-chat,hack_H2O,hack_H2O,2,do_not_deploy,0,0,0,[],0,0,True,False,6325,True,
+deepseek-chat,hack_H2O,hack_H2O,3,do_not_deploy,0,0,0,['do_not_deploy'],0,0,True,False,6180,True,
+deepseek-chat,hack_HANAToken,hack_HANAToken,1,do_not_deploy,1,1,0,[],0,0,False,,8211,False,
+deepseek-chat,hack_HANAToken,hack_HANAToken,2,do_not_deploy,1,2,1,[],0,1,True,,4784,True,
+deepseek-chat,hack_HANAToken,hack_HANAToken,3,do_not_deploy,1,1,0,"['do_not_deploy', 'nonReentrant', 'removeLiquidity']",0,1,False,,7439,False,
+deepseek-chat,hack_LABUBUToken,hack_LABUBUToken,1,do_not_deploy,11,11,0,"['burnFrom', 'decreaseAllowance', 'increaseAllowance', 'sum']",4,8,False,,5240,False,True
+deepseek-chat,hack_LABUBUToken,hack_LABUBUToken,2,do_not_deploy,10,13,2,"['do_not_deploy', 'mint', 'renounceOwnership', 'safeAdd', 'transferOwnership']",3,6,False,,5053,False,True
+deepseek-chat,hack_LABUBUToken,hack_LABUBUToken,3,do_not_deploy,12,12,0,"['_spendAllowance', 'mint', 'renounceOwnership', 'sum', 'transferOwnership']",6,10,False,,5745,False,True
+deepseek-chat,hack_MulticallWithETH,hack_MulticallWithETH,1,fix_first,11,12,1,"['CALL', 'nonReentrant', 'totalSpent']",7,10,False,,4719,True,True
+deepseek-chat,hack_MulticallWithETH,hack_MulticallWithETH,2,fix_first,10,10,0,"['fallback', 'nonReentrant', 'receive', 'withdraw']",7,9,False,,4017,True,True
+deepseek-chat,hack_MulticallWithETH,hack_MulticallWithETH,3,fix_first,10,12,1,['MAX_CALLS'],5,7,False,,4659,True,True
+deepseek-chat,hack_MyAi,hack_MyAi,1,do_not_deploy,11,11,2,"['do_not_deploy', 'refundExcess', 'renounceOwnership', 'withdrawERC20']",4,9,True,False,6887,True,True
+deepseek-chat,hack_MyAi,hack_MyAi,2,fix_first,12,12,3,"['SafeERC20', 'nonReentrant', 'sweep', 'sweepToken']",1,8,True,False,7123,True,True
+deepseek-chat,hack_MyAi,hack_MyAi,3,fix_first,0,0,0,"['immutable', 'sum']",0,0,False,,6804,True,True
+deepseek-chat,hack_PLN,hack_PLN,1,do_not_deploy,0,0,0,[],0,0,False,,8250,False,True
+deepseek-chat,hack_PLN,hack_PLN,2,do_not_deploy,18,25,0,"['_beforeTokenTransfer', 'fallback', 'renounceOwnership']",8,23,False,,9257,False,True
+deepseek-chat,hack_PLN,hack_PLN,3,fix_first,0,0,0,"['_beforeTokenTransfer', 'renounceOwnership']",0,0,False,,10301,True,True
+deepseek-chat,hack_RedKeysCoin,hack_RedKeysCoin,1,do_not_deploy,21,32,0,"['SafeERC20', 'transaction']",13,25,True,,8334,True,
+deepseek-chat,hack_RedKeysCoin,hack_RedKeysCoin,2,do_not_deploy,17,22,7,[],3,10,True,,6431,True,
+deepseek-chat,hack_RedKeysCoin,hack_RedKeysCoin,3,do_not_deploy,14,18,0,[],5,17,True,,6360,True,
+deepseek-chat,hack_SUT,hack_SUT,1,fix_first,17,22,0,"['nonReentrant', 'receive', 'renounceOwnership']",5,17,True,False,5830,True,
+deepseek-chat,hack_SUT,hack_SUT,2,fix_first,0,0,0,['nonReentrant'],0,0,True,False,5514,True,
+deepseek-chat,hack_SUT,hack_SUT,3,do_not_deploy,14,17,0,"['IERC20', 'fallback', 'receive', 'safeTransfer', 'transferOwnership']",5,17,True,False,4755,True,
+deepseek-chat,hack_UeriiToken,hack_UeriiToken,1,do_not_deploy,3,3,0,"['Ownable', 'onlyOwner']",0,3,True,False,1867,True,
+deepseek-chat,hack_UeriiToken,hack_UeriiToken,2,do_not_deploy,4,4,0,"['maxSupply', 'onlyOwner']",1,2,True,False,2579,True,
+deepseek-chat,hack_UeriiToken,hack_UeriiToken,3,fix_first,1,1,0,"['Ownable', 'onlyOwner']",0,1,True,False,2748,True,
+deepseek-chat,hack_Uwerx,hack_Uwerx,1,do_not_deploy,0,0,0,['do_not_deploy'],0,0,False,,4734,True,True
+deepseek-chat,hack_Uwerx,hack_Uwerx,2,do_not_deploy,1,1,0,[],1,1,False,,4765,True,True
+deepseek-chat,hack_Uwerx,hack_Uwerx,3,do_not_deploy,0,0,0,[],0,0,False,,5917,True,True
+deepseek-chat,holdout_FFIST,holdout_FFIST,1,do_not_deploy,0,0,0,['removeOwnership'],0,0,True,,8911,True,True
+deepseek-chat,holdout_FFIST,holdout_FFIST,2,do_not_deploy,0,0,0,[],0,0,True,,7450,True,True
+deepseek-chat,holdout_FFIST,holdout_FFIST,3,do_not_deploy,0,0,0,[],0,0,True,,7201,True,True
+deepseek-chat,holdout_Grizzifi,holdout_Grizzifi,1,fix_first,1,1,0,"['ReentrancyGuard', 'nonReentrant']",1,1,False,,9733,True,True
+deepseek-chat,holdout_Grizzifi,holdout_Grizzifi,2,fix_first,0,0,0,"['eth_call', 'fix_first', 'nonReentrant', 'renounceOwnership', 'updateReferralCounts']",0,0,False,,10774,True,True
+deepseek-chat,holdout_Grizzifi,holdout_Grizzifi,3,do_not_deploy,0,0,0,"['ReentrancyGuard', 'setPlatformFee']",0,0,False,,9838,True,True
+deepseek-chat,holdout_LW,holdout_LW,1,do_not_deploy,0,0,0,['do_not_deploy'],0,0,False,,8297,True,True
+deepseek-chat,holdout_LW,holdout_LW,2,do_not_deploy,20,22,9,[],3,12,True,,11894,True,True
+deepseek-chat,holdout_LW,holdout_LW,3,do_not_deploy,20,20,0,[],3,19,False,,9801,True,True
+deepseek-chat,holdout_MFT,holdout_MFT,1,do_not_deploy,0,0,0,['withdraw'],0,0,True,False,7206,True,True
+deepseek-chat,holdout_MFT,holdout_MFT,2,do_not_deploy,1,1,0,['withdraw'],0,1,True,False,6568,True,True
+deepseek-chat,holdout_MFT,holdout_MFT,3,do_not_deploy,0,0,0,"['IERC20Metadata', 'dEaD']",0,0,True,False,5358,True,True
+deepseek-chat,holdout_Utopia,holdout_Utopia,1,do_not_deploy,0,0,0,"['do_not_deploy', 'sum']",0,0,True,,6847,True,True
+deepseek-chat,holdout_Utopia,holdout_Utopia,2,do_not_deploy,0,0,0,['increaseAllowance'],0,0,True,,7947,True,True
+deepseek-chat,holdout_Utopia,holdout_Utopia,3,do_not_deploy,18,30,0,[],13,29,True,,8364,True,True
+deepseek-chat,holdout_XAI,holdout_XAI,1,do_not_deploy,12,18,0,"['immutable', 'transition', 'withdrawStuck']",6,18,True,,7829,True,True
+deepseek-chat,holdout_XAI,holdout_XAI,2,do_not_deploy,0,0,0,"['removeCharity', 'tTotal']",0,0,True,,5940,True,True
+deepseek-chat,holdout_XAI,holdout_XAI,3,do_not_deploy,0,0,0,[],0,0,True,,9567,True,True
+deepseek-chat,safe_oz4_erc20_full,safe_oz4_erc20_full,1,deployable,3,3,0,[],2,2,False,,1740,False,
+deepseek-chat,safe_oz4_erc20_full,safe_oz4_erc20_full,2,fix_first,5,5,0,[],4,4,False,,3602,False,
+deepseek-chat,safe_oz4_erc20_full,safe_oz4_erc20_full,3,fix_first,5,5,0,['MAX_SUPPLY'],5,5,False,,3107,False,
+deepseek-chat,safe_oz4_erc721_public_paid_mint,safe_oz4_erc721_public_paid_mint,1,fix_first,8,10,0,['saleActive'],9,9,False,,3947,False,
+deepseek-chat,safe_oz4_erc721_public_paid_mint,safe_oz4_erc721_public_paid_mint,2,fix_first,7,7,0,[],6,6,False,,2947,False,
+deepseek-chat,safe_oz4_erc721_public_paid_mint,safe_oz4_erc721_public_paid_mint,3,fix_first,4,5,0,[],3,3,False,,2571,False,
+deepseek-chat,safe_oz4_wrapper,safe_oz4_wrapper,1,fix_first,5,5,0,[],3,3,False,,2662,False,
+deepseek-chat,safe_oz4_wrapper,safe_oz4_wrapper,2,deployable,4,5,0,[],5,5,False,,3806,False,
+deepseek-chat,safe_oz4_wrapper,safe_oz4_wrapper,3,deployable,4,5,0,"['do_not_deploy', 'fix_first']",3,3,False,,2247,False,
+deepseek-chat,safe_oz5_erc20_basic,safe_oz5_erc20_basic,1,deployable,3,3,0,[],0,0,False,,1427,False,
+deepseek-chat,safe_oz5_erc20_basic,safe_oz5_erc20_basic,2,deployable,5,6,2,[],1,1,False,,2285,False,
+deepseek-chat,safe_oz5_erc20_basic,safe_oz5_erc20_basic,3,deployable,0,0,0,[],0,0,False,,1939,False,
+deepseek-chat,safe_oz5_erc20_full,safe_oz5_erc20_full,1,deployable,5,6,0,['mintByOwner'],5,6,False,,2256,False,
+deepseek-chat,safe_oz5_erc20_full,safe_oz5_erc20_full,2,deployable,3,3,0,[],2,2,False,,1785,False,
+deepseek-chat,safe_oz5_erc20_full,safe_oz5_erc20_full,3,deployable,5,5,0,[],4,5,False,,2161,False,
+deepseek-chat,safe_oz5_erc4626,safe_oz5_erc4626,1,deployable,3,3,0,[],1,1,False,,2597,False,
+deepseek-chat,safe_oz5_erc4626,safe_oz5_erc4626,2,deployable,4,4,0,[],1,1,False,,3816,False,
+deepseek-chat,safe_oz5_erc4626,safe_oz5_erc4626,3,fix_first,10,10,0,[],8,8,False,,3845,False,
+deepseek-chat,safe_oz5_erc721,safe_oz5_erc721,1,do_not_deploy,2,2,0,[],2,2,False,,2335,False,
+deepseek-chat,safe_oz5_erc721,safe_oz5_erc721,2,fix_first,5,5,0,['setTokenURI'],5,5,False,,2875,False,
+deepseek-chat,safe_oz5_erc721,safe_oz5_erc721,3,fix_first,11,11,0,['fix_first'],10,10,False,,4668,False,
+deepseek-chat,safe_oz5_merkle_airdrop,safe_oz5_merkle_airdrop,1,fix_first,5,5,0,"['Claimed', 'claimedAmount', 'setRoot']",4,4,False,,4498,False,
+deepseek-chat,safe_oz5_merkle_airdrop,safe_oz5_merkle_airdrop,2,fix_first,6,7,0,"['Claimed', 'totalClaimed', 'withdrawUnclaimed']",3,3,False,,4003,False,
+deepseek-chat,safe_oz5_merkle_airdrop,safe_oz5_merkle_airdrop,3,fix_first,5,9,0,"['Claimed', 'do_not_deploy', 'sweep']",7,7,False,,2728,False,
+deepseek-chat,safe_oz5_payment_splitter_pull,safe_oz5_payment_splitter_pull,1,deployable,5,5,0,[],3,3,False,,2434,False,
+deepseek-chat,safe_oz5_payment_splitter_pull,safe_oz5_payment_splitter_pull,2,deployable,8,8,0,[],6,6,False,,2589,False,
+deepseek-chat,safe_oz5_payment_splitter_pull,safe_oz5_payment_splitter_pull,3,fix_first,4,4,0,[],3,3,False,,2919,False,
+deepseek-chat,safe_oz5_staking_simple,safe_oz5_staking_simple,1,fix_first,5,5,0,[],4,4,False,,2468,False,
+deepseek-chat,safe_oz5_staking_simple,safe_oz5_staking_simple,2,fix_first,4,4,4,[],0,0,False,,2930,False,
+deepseek-chat,safe_oz5_staking_simple,safe_oz5_staking_simple,3,fix_first,4,5,0,[],5,5,False,,3421,False,
+deepseek-chat,safe_oz5_timelock,safe_oz5_timelock,1,fix_first,4,4,0,"['do_not_deploy', 'fix_first']",2,2,False,,3935,False,
+deepseek-chat,safe_oz5_timelock,safe_oz5_timelock,2,fix_first,3,3,0,[],0,0,False,,2384,False,
+deepseek-chat,safe_oz5_timelock,safe_oz5_timelock,3,deployable,4,4,0,[],1,1,False,,3739,False,
+deepseek-chat,safe_oz5_vesting,safe_oz5_vesting,1,fix_first,3,3,0,"['__VestingWallet_init', '_startTimestamp']",3,3,False,,3073,False,
+deepseek-chat,safe_oz5_vesting,safe_oz5_vesting,2,deployable,3,5,0,[],4,4,False,,2049,False,
+deepseek-chat,safe_oz5_vesting,safe_oz5_vesting,3,deployable,3,3,0,[],3,3,False,,3328,False,
+deepseek-chat,safe_solmate_erc20,safe_solmate_erc20,1,deployable,1,1,0,['MAX_SUPPLY'],0,1,False,,2790,False,
+deepseek-chat,safe_solmate_erc20,safe_solmate_erc20,2,fix_first,2,5,1,['burn'],2,4,False,,4434,False,
+deepseek-chat,safe_solmate_erc20,safe_solmate_erc20,3,do_not_deploy,13,21,0,"['MAX_SUPPLY', 'fallback', 'receive', 'renounceOwnership']",7,20,False,,5759,False,
+deepseek-chat,safe_solmate_reentrancy_bank,safe_solmate_reentrancy_bank,1,deployable,0,0,0,"['SafeTransferETH', 'deployable', 'fallback', 'receive']",0,0,False,,1849,False,
+deepseek-chat,safe_solmate_reentrancy_bank,safe_solmate_reentrancy_bank,2,do_not_deploy,8,8,0,"['deployable', 'fallback', 'fix_first', 'receive']",3,8,False,,8004,False,
+deepseek-chat,safe_solmate_reentrancy_bank,safe_solmate_reentrancy_bank,3,do_not_deploy,0,0,0,[],0,0,False,,3635,False,
+deepseek-chat,safe_weth9_08,safe_weth9_08,1,fix_first,9,11,0,"['depositTo', 'do_not_deploy', 'fallback', 'fix_first']",6,8,False,,3567,False,
+deepseek-chat,safe_weth9_08,safe_weth9_08,2,deployable,0,0,0,"['fallback', 'nonReentrant', 'permit']",0,0,False,,4808,False,
+deepseek-chat,safe_weth9_08,safe_weth9_08,3,deployable,0,0,0,"['constant', 'immutable']",0,0,False,,2631,False,
+deepseek-chat,steer_APEMAGA,hack_APEMAGA,1,do_not_deploy,9,12,3,[],1,9,True,False,4400,True,
+deepseek-chat,steer_APEMAGA,hack_APEMAGA,2,do_not_deploy,1,1,0,[],0,0,True,False,4857,True,
+deepseek-chat,steer_APEMAGA,hack_APEMAGA,3,do_not_deploy,12,13,6,[],2,6,True,False,5474,True,
+deepseek-chat,steer_LABUBUToken,hack_LABUBUToken,1,do_not_deploy,11,11,0,"['_mint', 'decreaseAllowance', 'increaseAllowance', 'sum']",5,7,False,,4193,True,True
+deepseek-chat,steer_LABUBUToken,hack_LABUBUToken,2,do_not_deploy,8,9,0,[],4,6,False,,4146,False,True
+deepseek-chat,steer_LABUBUToken,hack_LABUBUToken,3,do_not_deploy,10,11,0,['transferOwnership'],4,6,False,,3935,False,True
+deepseek-chat,steer_UeriiToken,hack_UeriiToken,1,do_not_deploy,1,1,0,"['Ownable', 'onlyOwner']",0,1,True,False,2677,True,
+deepseek-chat,steer_UeriiToken,hack_UeriiToken,2,do_not_deploy,3,4,0,"['MinterRole', 'Ownable', 'onlyOwner']",1,4,True,False,2163,True,
+deepseek-chat,steer_UeriiToken,hack_UeriiToken,3,do_not_deploy,6,7,0,"['AccessControl', 'MINTER_ROLE', 'Ownable', 'do_not_deploy', 'onlyOwner']",0,5,True,False,3095,True,
+deepseek-chat,steer_dex_launcher_1_chat,ai_dex_launcher_1_chat,1,do_not_deploy,0,0,0,"['nonReentrant', 'skim']",0,0,True,,6409,True,True
+deepseek-chat,steer_dex_launcher_1_chat,ai_dex_launcher_1_chat,2,do_not_deploy,9,16,3,"['ReentrancyGuard', 'deadline', 'do_not_deploy', 'fix_first', 'nonReentrant', 'preSupply', 'sqrt']",7,13,True,,8108,True,True
+deepseek-chat,steer_dex_launcher_1_chat,ai_dex_launcher_1_chat,3,do_not_deploy,0,0,0,"['deadline', 'do_not_deploy', 'nonReentrant']",0,0,True,,6303,True,True
+deepseek-chat,steer_eth_vault_3_chat,ai_eth_vault_3_chat,1,do_not_deploy,11,13,0,"['Ownable2Step', 'ReentrancyGuard', 'nonReentrant']",7,11,True,,4341,True,
+deepseek-chat,steer_eth_vault_3_chat,ai_eth_vault_3_chat,2,do_not_deploy,10,10,0,"['Ownable2Step', 'payment']",4,9,True,,4918,True,
+deepseek-chat,steer_eth_vault_3_chat,ai_eth_vault_3_chat,3,do_not_deploy,8,8,0,['eth_call'],7,7,True,,4606,True,
+deepseek-reasoner,ai_dex_launcher_1_chat,ai_dex_launcher_1_chat,1,do_not_deploy,5,14,0,"['ReentrancyGuard', 'do_not_deploy']",14,14,True,,3174,True,
+deepseek-reasoner,ai_dex_launcher_1_reasoner,ai_dex_launcher_1_reasoner,1,do_not_deploy,6,17,0,"['burn', 'deadline', 'do_not_deploy']",13,17,True,,3851,True,True
+deepseek-reasoner,ai_dex_launcher_2_chat,ai_dex_launcher_2_chat,1,do_not_deploy,2,2,0,[],0,2,False,,2901,False,
+deepseek-reasoner,ai_dex_launcher_3_chat,ai_dex_launcher_3_chat,1,do_not_deploy,7,8,0,[],6,6,False,,2582,False,
+deepseek-reasoner,ai_erc20_tax_1_chat,ai_erc20_tax_1_chat,1,fix_first,5,5,0,['fix_first'],4,4,False,,2474,False,
+deepseek-reasoner,ai_erc20_tax_1_reasoner,ai_erc20_tax_1_reasoner,1,fix_first,7,12,0,"['decreaseAllowance', 'fix_first', 'increaseAllowance', 'renounceOwnership']",11,11,False,,3072,False,
+deepseek-reasoner,ai_erc20_tax_2_chat,ai_erc20_tax_2_chat,1,fix_first,7,10,0,"['decreaseAllowance', 'fix_first', 'increaseAllowance']",9,9,False,,3071,False,
+deepseek-reasoner,ai_erc20_tax_3_chat,ai_erc20_tax_3_chat,1,fix_first,10,11,0,[],11,11,False,,2988,False,
+deepseek-reasoner,ai_eth_vault_1_chat,ai_eth_vault_1_chat,1,fix_first,3,9,0,[],9,9,False,,1516,False,
+deepseek-reasoner,ai_eth_vault_1_reasoner,ai_eth_vault_1_reasoner,1,fix_first,5,5,0,['withdrawTo'],3,4,False,,1675,False,
+deepseek-reasoner,ai_eth_vault_2_chat,ai_eth_vault_2_chat,1,do_not_deploy,0,0,0,[],0,0,False,,2296,False,
+deepseek-reasoner,ai_eth_vault_3_chat,ai_eth_vault_3_chat,1,do_not_deploy,0,0,0,[],0,0,True,,2407,True,
+deepseek-reasoner,ai_multisig_timelock_1_chat,ai_multisig_timelock_1_chat,1,fix_first,5,13,0,[],10,13,False,,3185,False,
+deepseek-reasoner,ai_multisig_timelock_1_reasoner,ai_multisig_timelock_1_reasoner,1,deployable,3,4,0,[],3,4,False,,1133,False,
+deepseek-reasoner,ai_multisig_timelock_2_chat,ai_multisig_timelock_2_chat,1,fix_first,9,9,0,[],7,8,False,,3208,False,
+deepseek-reasoner,ai_multisig_timelock_3_chat,ai_multisig_timelock_3_chat,1,do_not_deploy,0,0,0,['fallback'],0,0,False,,2823,False,
+deepseek-reasoner,ai_nft_allowlist_1_chat,ai_nft_allowlist_1_chat,1,fix_first,7,7,0,"['_approved', '_safeMint', 'renounceOwnership', 'transferOwnership']",5,6,False,,2971,False,
+deepseek-reasoner,ai_nft_allowlist_1_reasoner,ai_nft_allowlist_1_reasoner,1,fix_first,5,7,0,['fix_first'],7,7,False,,2243,False,
+deepseek-reasoner,ai_nft_allowlist_2_chat,ai_nft_allowlist_2_chat,1,deployable,1,3,0,[],3,3,False,,770,False,
+deepseek-reasoner,ai_nft_allowlist_3_chat,ai_nft_allowlist_3_chat,1,,0,0,0,[],0,0,False,,0,False,
+deepseek-reasoner,ai_staking_1_chat,ai_staking_1_chat,1,do_not_deploy,0,0,0,[],0,0,True,,2670,True,
+deepseek-reasoner,ai_staking_1_reasoner,ai_staking_1_reasoner,1,fix_first,0,0,0,[],0,0,True,,2008,True,
+deepseek-reasoner,ai_staking_2_chat,ai_staking_2_chat,1,fix_first,4,8,0,"['SafeERC20', 'nonReentrant']",7,8,False,,3320,False,
+deepseek-reasoner,ai_staking_3_chat,ai_staking_3_chat,1,do_not_deploy,8,14,0,['periodFinish'],6,12,False,,2777,False,
+deepseek-reasoner,hack_AIZPTToken,hack_AIZPTToken,1,do_not_deploy,13,20,0,"['allowance', 'approve', 'transferFrom']",16,19,False,,2325,False,True
+deepseek-reasoner,hack_APEMAGA,hack_APEMAGA,1,do_not_deploy,8,15,0,['do_not_deploy'],15,15,True,True,3020,True,
+deepseek-reasoner,hack_Bitpaidio,hack_Bitpaidio,1,do_not_deploy,5,11,0,['SafeERC20'],7,11,True,True,3093,True,True
+deepseek-reasoner,hack_DDCoin,hack_DDCoin,1,do_not_deploy,14,22,0,['SafeERC20'],16,21,True,,3533,True,
+deepseek-reasoner,hack_DOGGO,hack_DOGGO,1,do_not_deploy,12,18,0,['buyFirstBlock'],9,11,False,,2903,False,
+deepseek-reasoner,hack_FIL314,hack_FIL314,1,do_not_deploy,13,15,0,"['allowance', 'approve', 'transferFrom']",13,15,False,,4051,False,
+deepseek-reasoner,hack_FireToken,hack_FireToken,1,do_not_deploy,12,18,0,[],14,16,True,True,3422,True,
+deepseek-reasoner,hack_H2O,hack_H2O,1,do_not_deploy,17,18,0,[],13,13,True,False,3212,True,
+deepseek-reasoner,hack_HANAToken,hack_HANAToken,1,do_not_deploy,10,20,0,[],15,16,False,,3370,False,
+deepseek-reasoner,hack_LABUBUToken,hack_LABUBUToken,1,do_not_deploy,8,11,0,[],6,8,True,False,2544,True,True
+deepseek-reasoner,hack_MulticallWithETH,hack_MulticallWithETH,1,do_not_deploy,1,3,0,"['fallback', 'receive', 'withdraw']",3,3,False,,1747,False,True
+deepseek-reasoner,hack_MyAi,hack_MyAi,1,do_not_deploy,8,8,0,['sum'],5,8,True,True,2727,True,True
+deepseek-reasoner,hack_PLN,hack_PLN,1,fix_first,15,19,0,[],15,18,False,,3707,False,True
+deepseek-reasoner,hack_RedKeysCoin,hack_RedKeysCoin,1,do_not_deploy,9,15,0,[],10,10,True,,2286,True,
+deepseek-reasoner,hack_SUT,hack_SUT,1,do_not_deploy,0,0,0,[],0,0,True,False,3104,True,
+deepseek-reasoner,hack_UeriiToken,hack_UeriiToken,1,do_not_deploy,3,3,0,['onlyOwner'],1,2,True,True,770,True,
+deepseek-reasoner,hack_Uwerx,hack_Uwerx,1,do_not_deploy,9,11,0,[],11,11,True,True,3653,True,True
+deepseek-reasoner,holdout_FFIST,holdout_FFIST,1,do_not_deploy,0,0,0,['_totalSupply'],0,0,True,,4143,True,True
+deepseek-reasoner,holdout_Grizzifi,holdout_Grizzifi,1,do_not_deploy,14,21,0,['nonReentrant'],15,17,False,,3864,True,True
+deepseek-reasoner,holdout_LW,holdout_LW,1,do_not_deploy,19,36,0,[],34,35,False,,4498,True,True
+deepseek-reasoner,holdout_MFT,holdout_MFT,1,do_not_deploy,9,18,0,[],17,17,True,True,2823,True,True
+deepseek-reasoner,holdout_Utopia,holdout_Utopia,1,do_not_deploy,10,11,0,[],7,9,True,,2162,True,True
+deepseek-reasoner,holdout_XAI,holdout_XAI,1,do_not_deploy,7,11,0,[],10,11,True,,2453,True,True
+deepseek-reasoner,safe_oz4_erc721_public_paid_mint,safe_oz4_erc721_public_paid_mint,1,fix_first,4,4,0,[],3,3,False,,1000,False,
+deepseek-reasoner,safe_oz5_erc20_full,safe_oz5_erc20_full,1,deployable,5,5,0,"['MAX_SUPPLY', 'fix_first']",4,4,False,,1353,False,
+deepseek-reasoner,safe_oz5_payment_splitter_pull,safe_oz5_payment_splitter_pull,1,deployable,3,3,0,[],3,3,False,,1141,False,
+deepseek-reasoner,safe_oz5_staking_simple,safe_oz5_staking_simple,1,fix_first,5,5,0,[],3,3,False,,1824,False,
+deepseek-reasoner,safe_solmate_reentrancy_bank,safe_solmate_reentrancy_bank,1,deployable,0,0,0,[],0,0,False,,743,False,
+deepseek-reasoner,safe_weth9_08,safe_weth9_08,1,deployable,5,5,0,['fallback'],5,5,False,,1912,False,

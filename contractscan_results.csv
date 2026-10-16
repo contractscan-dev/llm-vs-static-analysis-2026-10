@@ -1,0 +1,63 @@
+contract,cs_verdict,cs_reasons,cs_high_medium
+ai_dex_launcher_1_chat,do_not_deploy,precise detector slither:reentrancy-eth,heuristic:rug:owner_mint|slither:incorrect-equality|slither:reentrancy-eth|slither:reentrancy-no-eth|slither:write-after-write
+ai_dex_launcher_1_reasoner,do_not_deploy,anyone can mint tokens (token:unguarded_mint),heuristic:token:unguarded_mint|slither:incorrect-equality|slither:reentrancy-balance
+ai_dex_launcher_2_chat,deployable,no high/medium findings from static analysis (not an audit),
+ai_dex_launcher_3_chat,compile_fail,,
+ai_erc20_tax_1_chat,deployable,no high/medium findings from static analysis (not an audit),
+ai_erc20_tax_1_reasoner,fix_first,medium finding(s),heuristic:rug:fee_change
+ai_erc20_tax_2_chat,fix_first,medium finding(s),heuristic:rug:fee_change
+ai_erc20_tax_3_chat,fix_first,medium finding(s),heuristic:rug:fee_change
+ai_eth_vault_1_chat,deployable,no high/medium findings from static analysis (not an audit),
+ai_eth_vault_1_reasoner,do_not_deploy,precise detector slither:arbitrary-send-eth,slither:arbitrary-send-eth
+ai_eth_vault_2_chat,deployable,no high/medium findings from static analysis (not an audit),
+ai_eth_vault_3_chat,do_not_deploy,centralization: owner can take user funds (centralization:owner_can_take_user_funds),heuristic:centralization:owner_can_take_user_funds|heuristic:rug:owner_withdraw
+ai_multisig_timelock_1_chat,deployable,no high/medium findings from static analysis (not an audit),
+ai_multisig_timelock_1_reasoner,deployable,no high/medium findings from static analysis (not an audit),
+ai_multisig_timelock_2_chat,deployable,no high/medium findings from static analysis (not an audit),
+ai_multisig_timelock_3_chat,deployable,no high/medium findings from static analysis (not an audit),
+ai_nft_allowlist_1_chat,fix_first,medium finding(s),heuristic:rug:owner_withdraw
+ai_nft_allowlist_1_reasoner,compile_fail,,
+ai_nft_allowlist_2_chat,fix_first,medium finding(s),heuristic:rug:owner_withdraw
+ai_nft_allowlist_3_chat,fix_first,medium finding(s),heuristic:rug:owner_withdraw
+ai_staking_1_chat,fix_first,medium finding(s),heuristic:solvency:fixed_apr_unfunded|slither:incorrect-equality
+ai_staking_1_reasoner,do_not_deploy,anyone can mint tokens (token:unguarded_mint),heuristic:rug:owner_withdraw|heuristic:token:unguarded_mint|slither:incorrect-equality|slither:reentrancy-no-eth
+ai_staking_2_chat,fix_first,medium finding(s),slither:reentrancy-no-eth
+ai_staking_3_chat,deployable,no high/medium findings from static analysis (not an audit),
+hack_AIZPTToken,fix_first,uncorroborated high finding(s): heuristic:rug:trading_toggle,heuristic:rug:trading_toggle|heuristic:token:price_includes_payment|slither:divide-before-multiply
+hack_APEMAGA,do_not_deploy,anyone can burn another account's tokens (token:unguarded_burn); corroborated aderyn:contract-locks-ether,aderyn:contract-locks-ether|heuristic:token:unguarded_burn|slither:locked-ether
+hack_Bitpaidio,fix_first,uncorroborated high finding(s): slither:unchecked-transfer,slither:incorrect-equality|slither:reentrancy-no-eth|slither:unchecked-transfer
+hack_DDCoin,fix_first,uncorroborated high finding(s): slither:unchecked-transfer,slither:divide-before-multiply|slither:unchecked-transfer|slither:unused-return
+hack_DOGGO,do_not_deploy,corroborated heuristic:rug:trading_toggle; precise detector slither:arbitrary-send-eth; precise detector slither:reentrancy-eth,heuristic:rug:trading_toggle|slither:arbitrary-send-eth|slither:incorrect-equality|slither:reentrancy-eth|slither:unchecked-transfer|slither:unused-return
+hack_FIL314,do_not_deploy,precise detector slither:arbitrary-send-eth; precise detector slither:reentrancy-eth,heuristic:rug:fee_change|heuristic:rug:trading_toggle|slither:arbitrary-send-eth|slither:divide-before-multiply|slither:reentrancy-eth|slither:reentrancy-no-eth
+hack_FireToken,do_not_deploy,corroborated aderyn:tx-origin-used-for-auth; corroborated heuristic:rug:blacklist; corroborated heuristic:rug:trading_toggle; multiple rug-pattern heuristics; precise detector slither:arbitrary-send-eth; precise detector slither:reentrancy-eth,aderyn:tx-origin-used-for-auth|heuristic:rug:blacklist|heuristic:rug:trading_toggle|heuristic:token:pair_balance_rewrite|slither:arbitrary-send-eth|slither:reentrancy-eth|slither:tx-origin|slither:unused-return
+hack_H2O,do_not_deploy,corroborated aderyn:contract-locks-ether,aderyn:contract-locks-ether|slither:incorrect-equality|slither:locked-ether|slither:reentrancy-no-eth|slither:unused-return|slither:weak-prng
+hack_HANAToken,do_not_deploy,corroborated heuristic:rug:trading_toggle; precise detector slither:arbitrary-send-eth; precise detector slither:reentrancy-eth,heuristic:rug:trading_toggle|slither:arbitrary-send-eth|slither:incorrect-equality|slither:reentrancy-eth|slither:unchecked-transfer|slither:unused-return
+hack_LABUBUToken,do_not_deploy,self-transfer inflates balance (token:self_transfer_inflation),heuristic:token:self_transfer_inflation
+hack_MulticallWithETH,do_not_deploy,precise detector slither:arbitrary-send-eth,slither:arbitrary-send-eth|slither:uninitialized-local
+hack_MyAi,do_not_deploy,precise detector slither:arbitrary-send-eth,heuristic:rug:fee_change|heuristic:rug:owner_withdraw|slither:arbitrary-send-erc20|slither:arbitrary-send-eth|slither:unchecked-transfer
+hack_PLN,do_not_deploy,precise detector slither:reentrancy-eth,heuristic:rug:fee_change|heuristic:rug:trading_toggle|slither:reentrancy-eth|slither:unused-return
+hack_RedKeysCoin,fix_first,"uncorroborated high finding(s): slither:unchecked-transfer, slither:weak-prng",slither:divide-before-multiply|slither:incorrect-equality|slither:reentrancy-no-eth|slither:unchecked-transfer|slither:weak-prng
+hack_SUT,fix_first,medium finding(s),slither:divide-before-multiply
+hack_UeriiToken,do_not_deploy,anyone can mint tokens (token:unguarded_mint),heuristic:token:unguarded_mint
+hack_Uwerx,fix_first,uncorroborated high finding(s): heuristic:token:pair_transfer_extra_burn,heuristic:token:pair_transfer_extra_burn
+holdout_FFIST,do_not_deploy,precise detector slither:arbitrary-send-eth,heuristic:rug:fee_change|slither:arbitrary-send-erc20|slither:arbitrary-send-eth|slither:reentrancy-no-eth|slither:unchecked-transfer|slither:uninitialized-local|slither:unused-return
+holdout_Grizzifi,fix_first,no high/medium findings from static analysis (not an audit),
+holdout_LW,do_not_deploy,corroborated aderyn:unchecked-low-level-call,aderyn:unchecked-low-level-call|heuristic:rug:fee_change|slither:divide-before-multiply|slither:incorrect-equality|slither:locked-ether|slither:reentrancy-no-eth|slither:unchecked-lowlevel|slither:unchecked-transfer|slither:uninitialized-local|slither:unused-return
+holdout_MFT,do_not_deploy,corroborated aderyn:contract-locks-ether; corroborated heuristic:rug:blacklist,aderyn:contract-locks-ether|heuristic:rug:blacklist|heuristic:rug:fee_change|heuristic:token:pair_balance_rewrite|slither:arbitrary-send-erc20|slither:locked-ether|slither:reentrancy-no-eth|slither:unchecked-transfer|slither:uninitialized-local|slither:uninitialized-state|slither:unused-return
+holdout_Utopia,fix_first,uncorroborated high finding(s): slither:unchecked-transfer,heuristic:rug:fee_change|slither:incorrect-equality|slither:reentrancy-no-eth|slither:unchecked-transfer|slither:uninitialized-local|slither:unused-return
+holdout_XAI,deployable,no high/medium findings from static analysis (not an audit),
+safe_oz4_erc20_full,fix_first,uncorroborated high finding(s): heuristic:rug:owner_mint,heuristic:rug:owner_mint|heuristic:rug:pausable
+safe_oz4_erc721_public_paid_mint,fix_first,medium finding(s),heuristic:rug:owner_withdraw
+safe_oz4_wrapper,deployable,no high/medium findings from static analysis (not an audit),
+safe_oz5_erc20_basic,deployable,no high/medium findings from static analysis (not an audit),
+safe_oz5_erc20_full,fix_first,uncorroborated high finding(s): heuristic:rug:owner_mint,heuristic:rug:owner_mint|heuristic:rug:pausable
+safe_oz5_erc4626,deployable,no high/medium findings from static analysis (not an audit),
+safe_oz5_erc721,deployable,no high/medium findings from static analysis (not an audit),
+safe_oz5_merkle_airdrop,deployable,no high/medium findings from static analysis (not an audit),
+safe_oz5_payment_splitter_pull,deployable,no high/medium findings from static analysis (not an audit),
+safe_oz5_staking_simple,deployable,no high/medium findings from static analysis (not an audit),
+safe_oz5_timelock,deployable,no high/medium findings from static analysis (not an audit),
+safe_oz5_vesting,deployable,no high/medium findings from static analysis (not an audit),
+safe_solmate_erc20,fix_first,uncorroborated high finding(s): heuristic:rug:owner_mint,heuristic:rug:owner_mint
+safe_solmate_reentrancy_bank,deployable,no high/medium findings from static analysis (not an audit),
+safe_weth9_08,deployable,no high/medium findings from static analysis (not an audit),

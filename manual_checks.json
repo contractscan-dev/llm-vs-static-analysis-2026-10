@@ -1,0 +1,151 @@
+{
+ "rule": "Strict root-cause hit: the answer names the root-cause code and describes a mechanism that leads to the fix. Regex candidates in score.py; entries here override them after reading the answers. Unlisted (model, contract) pairs use the regex result, spot-checked.",
+ "overrides": {
+  "deepseek-chat": {
+   "hack_MulticallWithETH": [
+    0,
+    0,
+    0
+   ],
+   "hack_AIZPTToken": [
+    0,
+    0,
+    1
+   ],
+   "hack_Bitpaidio": [
+    0,
+    0,
+    0
+   ],
+   "hack_MyAi": [
+    1,
+    1,
+    0
+   ],
+   "hack_PLN": [
+    0,
+    0,
+    0
+   ],
+   "hack_LABUBUToken": [
+    0,
+    0,
+    0
+   ],
+   "steer_LABUBUToken": [
+    0,
+    0,
+    0
+   ],
+   "hack_Uwerx": [
+    0,
+    0,
+    0
+   ],
+   "holdout_MFT": [
+    1,
+    1,
+    1
+   ],
+   "holdout_XAI": [
+    1,
+    1,
+    1
+   ],
+   "holdout_LW": [
+    0,
+    1,
+    0
+   ],
+   "holdout_Grizzifi": [
+    0,
+    0,
+    0
+   ],
+   "holdout_Utopia": [
+    1,
+    1,
+    1
+   ],
+   "holdout_FFIST": [
+    1,
+    1,
+    1
+   ],
+   "ai_dex_launcher_1_chat": [
+    1,
+    1,
+    1
+   ],
+   "ai_dex_launcher_1_reasoner": [
+    0,
+    0,
+    1
+   ],
+   "ai_staking_1_chat": [
+    1,
+    1,
+    1
+   ],
+   "ai_staking_1_reasoner": [
+    1,
+    1,
+    1
+   ],
+   "ai_eth_vault_3_chat": [
+    1,
+    1,
+    1
+   ],
+   "steer_dex_launcher_1_chat": [
+    1,
+    1,
+    1
+   ]
+  },
+  "deepseek-reasoner": {
+   "hack_MulticallWithETH": [
+    0
+   ],
+   "hack_AIZPTToken": [
+    0
+   ],
+   "hack_Bitpaidio": [
+    1
+   ],
+   "hack_MyAi": [
+    1
+   ],
+   "hack_PLN": [
+    0
+   ],
+   "hack_LABUBUToken": [
+    1
+   ],
+   "hack_Uwerx": [
+    1
+   ],
+   "holdout_MFT": [
+    1
+   ],
+   "holdout_XAI": [
+    1
+   ],
+   "holdout_LW": [
+    0
+   ],
+   "holdout_Grizzifi": [
+    0
+   ],
+   "holdout_Utopia": [
+    1
+   ],
+   "holdout_FFIST": [
+    1
+   ],
+   "ai_dex_launcher_1_reasoner": [
+    1
+   ]
+  }
+ }
+}
